@@ -2,7 +2,6 @@
 
 require 'minitest/autorun'
 require_relative '../lib/reversi_methods'
-require 'debug'
 
 class ReversiMethodsTest < Minitest::Test
   include ReversiMethods
@@ -71,7 +70,6 @@ class ReversiMethodsTest < Minitest::Test
       --B-----
     BOARD
     board = build_board(initial_data)
-    # binding.break
     refute put_stone(board, 'b1', BLACK_STONE)
     assert_equal build_board(initial_data), board
   end
@@ -87,7 +85,6 @@ class ReversiMethodsTest < Minitest::Test
       --------
       --------
     BOARD
-    
     assert put_stone(board, 'b4', BLACK_STONE)
     assert_equal build_board(<<~BOARD), board
       --------

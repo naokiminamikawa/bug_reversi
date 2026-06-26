@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require_relative './lib/reversi_methods'
 
 class Reversi

@@ -27,6 +27,7 @@ class Position
       # Position.new('f7')のような呼び出し
       @row = ROW.index(row_or_cell_ref[1])
       @col = COL.index(row_or_cell_ref[0])
+
     end
   end
 
