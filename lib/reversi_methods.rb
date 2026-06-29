@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative './position'
 
 module ReversiMethods
@@ -40,7 +41,6 @@ module ReversiMethods
   end
 
   def put_stone(board, cell_ref, stone_color, dry_run: false)
-
     pos = Position.new(cell_ref)
     raise '無効なポジションです' if pos.invalid?
     raise 'すでに石が置かれています' unless pos.stone_color(board) == BLANK_CELL
@@ -58,7 +58,6 @@ module ReversiMethods
     copy_board(board, copied_board) if !dry_run && turn_succeed
 
     turn_succeed
-
   end
 
   def turn(board, target_pos, attack_stone_color, direction)
@@ -84,8 +83,7 @@ module ReversiMethods
         next unless cell == BLANK_CELL
 
         position = Position.new(row, col)
-        
-        return true if put_stone(board, position.to_cell_ref, attack_stone_color, dry_run: true)     
+        return true if put_stone(board, position.to_cell_ref, attack_stone_color, dry_run: true)
       end
     end
     false

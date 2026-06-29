@@ -117,7 +117,6 @@ class ReversiMethodsTest < Minitest::Test
   end
 
   def test_finished_of_quickest_win_board
-    
     assert finished?(build_board(<<~BOARD)) # 白最短勝利
       --------
       ---W----
